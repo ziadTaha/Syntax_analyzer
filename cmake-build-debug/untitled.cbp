@@ -84,6 +84,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/zeny/Documents/projects/parser/FirstMaker.cpp">
+			<Option target="untitled"/>
+		</Unit>
+		<Unit filename="/home/zeny/Documents/projects/parser/FirstMaker.h">
+			<Option target="untitled"/>
+		</Unit>
 		<Unit filename="/home/zeny/Documents/projects/parser/main.cpp">
 			<Option target="untitled"/>
 		</Unit>

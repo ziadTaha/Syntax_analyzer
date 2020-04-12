@@ -1,0 +1,101 @@
+//
+// Created by zeny on 4/12/20.
+//
+
+#include "FirstMaker.h"
+
+FirstMaker::FirstMaker(unordered_map<string, set<string>> &productions) : Productions(productions) {
+    calcLanguage();
+}
+
+const unordered_map<string,set<string>>  &FirstMaker::getF() const {
+    return F;
+}
+
+void FirstMaker::setF(const unordered_map<string,set<string>>  &f) {
+    F = f;
+}
+
+const set<string> &FirstMaker::getLanguage() const {
+    return language;
+}
+
+void FirstMaker::setLanguage(const set<string> &language) {
+    FirstMaker::language = language;
+}
+
+void FirstMaker::calcLanguage() {
+    for( const auto& production:this->Productions){
+        language.insert(production.first);
+        for( const auto& product:production.second){
+            language.insert(product);
+            vector<string>words=tokenize(product);
+            for(const auto& word : words){
+                language.insert(word);
+            }
+        }
+    }
+}
+
+bool FirstMaker::isTerminal(string s) {
+    return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
+}
+
+void FirstMaker::make() {
+    unordered_map<string,set<string>> first;
+    unordered_map<string,set<string>> dummyFirst;
+
+    for(auto l:language){
+        set<string> set={};
+        if(isTerminal(l)||tokenize(l).size()==1||l=="e"){
+            set.insert(l);
+            first[l]=set;
+        }else if(!isTerminal(l)&&l!="e"){
+            first[l]=set;
+        }
+    }
+
+    do{
+        dummyFirst=first;
+        for(auto production:this->Productions){
+            for(auto product: production.second){
+                int wordCount=0;
+                vector<string>words=tokenize(product);
+                set<string> currentFirst;
+                for(auto w:first[words[0]]){
+                    if(w!="e")
+                        currentFirst.insert(w);
+                }
+                while(first[words[wordCount]].find("e") != first[words[wordCount]].end()&&wordCount<words.size()-1){
+                    wordCount++;
+                    for(auto w:first[words[wordCount]]){
+                        if(w!="e")
+                            currentFirst.insert(w);
+                    }
+                }
+                if(wordCount==words.size()-1)
+                    currentFirst.insert("e");
+                first[product].insert(currentFirst.begin(),currentFirst.end());
+            }
+        }
+    }while(first!=dummyFirst);
+    setF(first);
+}
+
+vector<string> FirstMaker::tokenize(string s) {
+    // Vector of string to save tokens
+    vector <string> tokens;
+
+    // stringstream class check1
+    stringstream check1(s);
+
+    string intermediate;
+
+    // Tokenizing w.r.t. space ' '
+    while(getline(check1, intermediate, ' '))
+    {
+        tokens.push_back(intermediate);
+    }
+    return tokens;
+}
+

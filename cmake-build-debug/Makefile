@@ -123,6 +123,33 @@ untitled/fast:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/build
 .PHONY : untitled/fast
 
+FirstMaker.o: FirstMaker.cpp.o
+
+.PHONY : FirstMaker.o
+
+# target to build an object file
+FirstMaker.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/FirstMaker.cpp.o
+.PHONY : FirstMaker.cpp.o
+
+FirstMaker.i: FirstMaker.cpp.i
+
+.PHONY : FirstMaker.i
+
+# target to preprocess a source file
+FirstMaker.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/FirstMaker.cpp.i
+.PHONY : FirstMaker.cpp.i
+
+FirstMaker.s: FirstMaker.cpp.s
+
+.PHONY : FirstMaker.s
+
+# target to generate assembly for a file
+FirstMaker.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/FirstMaker.cpp.s
+.PHONY : FirstMaker.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... untitled"
 	@echo "... edit_cache"
+	@echo "... FirstMaker.o"
+	@echo "... FirstMaker.i"
+	@echo "... FirstMaker.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
