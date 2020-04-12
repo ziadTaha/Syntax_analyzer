@@ -8,8 +8,8 @@ private:
     /* data */
     
     void readGrammer (string path) ; 
-    vector<string > stringToVector(string s) ;  
-   
+    vector<string> stringToVector(string s) ;  
+    vector<string> oring( string s) ;
     
 
 public:
@@ -18,5 +18,6 @@ public:
     int trying  ; 
     unordered_map <string , vector <string> > nonTerminal ;
     void leftFactoring () ; 
+    void print() ; 
 };
 
