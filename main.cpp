@@ -4,8 +4,8 @@
 
 int main() {
     Parser p ; 
-    p.trying = 10 ; 
-    cout << p.trying << endl ; 
+    p.nonTerminal["1"] = { "a b B" , "a B" , "c d g" , "c d e B" , "c d f B" , "a b f"}  ;   
+    p.leftFactoring() ; 
     std::cout << "this is main!" << std::endl;
     return 0;
 }

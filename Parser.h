@@ -6,15 +6,17 @@ class Parser
 {
 private:
     /* data */
-    unordered_map <string , vector <string> > nonTerminal ;
+    
     void readGrammer (string path) ; 
     vector<string > stringToVector(string s) ;  
-    void leftFactoring () ; 
+   
     
 
 public:
     Parser(/* args */);
     ~Parser();
     int trying  ; 
+    unordered_map <string , vector <string> > nonTerminal ;
+    void leftFactoring () ; 
 };
 
