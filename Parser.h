@@ -19,5 +19,6 @@ public:
     unordered_map <string , vector <string> > nonTerminal ;
     void leftFactoring () ; 
     void print() ; 
+    
 };
 
