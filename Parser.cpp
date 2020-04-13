@@ -128,8 +128,13 @@ void Parser::leftFactoring()
       sort(v.begin(), v.end());
 
       for ( string g : v ) 
-         cout << g << endl ; 
+        cout << g << endl ; 
+     
 
+      vector<string> newVector ; 
+
+
+      int times = 0; 
       for (int i = 0; i < v.size(); i++)
       {
 
@@ -152,17 +157,20 @@ void Parser::leftFactoring()
            
          }
 
-         if (j == i + 1)
+         if (j == i + 1){
+            newVector.push_back(v[i]) ; 
+            cout << a.first << " " << v[i] << " " << "Ffffffffff" << endl ; 
             continue;
+         }
 
-         cout << i << " " << j -1  << " "  << 0 << endl ; 
+         //cout << i << " " << j -1  << " "  << 0 << endl ; 
           
 
          int counter = 1;
          int indexOfebslon = -1;
-         bool endOfloop = true;
+         string newOne = s[0] + " "; 
 
-         while (endOfloop)
+         while (true)
          {
             int start;
             for (start = i + 1; start < j; start++)
@@ -178,22 +186,60 @@ void Parser::leftFactoring()
                   /*cout << s[counter] << " "  << i <<  " "  << start  <<  " " << ss[counter] << endl ;
                   cout << v[i] << endl ; 
                   cout << v[start] << endl ;  */
+               }else {
+                  break ; 
                }
             }
             if (start == j) {
+               newOne += s[counter] + " " ; 
                counter++ ; 
             } 
             break ; 
          }
+           
 
-         counter-- ; 
+         string newNonTerminal =  a.first + to_string(times) ;  
 
-         cout << i << " " << j -1  << " "  << counter << endl ; 
+         newOne +=  newNonTerminal ; 
+
+         newVector.push_back(newOne) ; 
+
+         vector<string> nonTerVec ; 
+
+         for ( int start = i ; start < j ; start++ ) {
+            vector<string> ss = stringToVector(v[start]);
+            string f = "eeee"  ; 
+            if (counter == ss.size()){
+               nonTerVec.push_back(f); // eeeeee 
+               continue ; 
+            }
+            f =  ss[counter]; 
+            for ( int k = counter + 1  ; k < ss.size() ; k++ ){
+                  f += " " + ss[k] ; 
+                  // cout << "fffffffffffffff" << endl ;
+            } 
+            nonTerVec.push_back(f); 
+            //cout << newNonTerminal << " " << f << endl  ;  
+         } 
+
+         
+         
+         nonTerminal[newNonTerminal] = nonTerVec ; 
+         //  cout << i << " " << j -1  << " "  << counter - 1   << endl ; 
+         //cout << newOne << endl ; 
 
          i = j - 1;
+         times ++ ;          
       }
+
+      nonTerminal[a.first] = newVector ; 
    }
 
+}
 
 
+void Parser::print ( ) { 
+   for (auto a : nonTerminal) 
+      for (auto b : a.second ) 
+         cout << a.first << " " << b << endl; 
 }
