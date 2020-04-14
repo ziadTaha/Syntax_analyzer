@@ -1,4 +1,10 @@
 #include "Parser.h"
+#include <vector> 
+#include <string> 
+#include <algorithm> 
+#include <sstream> 
+#include <iterator> 
+#include <iostream> 
 
 Parser::Parser(/* args */)
 {
@@ -26,8 +32,8 @@ string Parser::vectorToString(vector<string > vec)
     std::ostringstream vts;
     if(!vec.empty())
     {
-       std::copy(vec.begin(), vec.end()-1, 
-        std::ostream_iterator<int>(vts, " ")); 
+       std::copy(vec.begin(), vec.end(), 
+       std::ostream_iterator<string>(vts, " ")); 
     } 
     return vts.str();
 }
@@ -58,7 +64,7 @@ void Parser::immediateLeftRecursion(string a,vector <string> ex)
  }
  if(!bString.empty())
  {
-    string e="";
+    string e="eeee";
     bString.push_back(e);
     nonTerminal[a]=aString;
     nonTerminal[a_]=bString;
@@ -73,6 +79,7 @@ void Parser::replaceAwithB(string a,string b)
     std::vector<std::string> result;
     for(string s: aString)
     {
+      
        std::vector<std::string> temp =stringToVector(s);
        string sbegin =*temp.begin();
        if(sbegin==b)
@@ -103,20 +110,23 @@ void Parser::replaceAwithB(string a,string b)
 }
 void Parser::leftRecursion()
 {
-    unordered_map <string , vector <string> >::iterator itrI;
-    unordered_map <string , vector <string> >::iterator itrJ;
-    for(itrI=nonTerminal.begin();itrI!=nonTerminal.end();++itrI)
+   
+    
+    std::vector<string> fin;
+    for(auto a:nonTerminal)
     {
-       string a=itrI->first;
-       for(itrJ=nonTerminal.begin();itrJ!=itrI;++itrJ)
-       {
-          string b=itrJ->first;
-          replaceAwithB(a,b);
+       
+       for(string s:fin)
+       {  
+          replaceAwithB(a.first,s);
        }
-
-       immediateLeftRecursion(a,nonTerminal[a]);
+       immediateLeftRecursion(a.first,nonTerminal[a.first]);
+       fin.push_back(a.first);
+      
+       
     }
-     
+   
+   
 }
 void Parser::leftFactoring()
 {
@@ -127,8 +137,6 @@ void Parser::leftFactoring()
 
       sort(v.begin(), v.end());
 
-      for ( string g : v ) 
-        cout << g << endl ; 
      
 
       vector<string> newVector ; 
@@ -159,11 +167,12 @@ void Parser::leftFactoring()
 
          if (j == i + 1){
             newVector.push_back(v[i]) ; 
-            cout << a.first << " " << v[i] << " " << "Ffffffffff" << endl ; 
+          
             continue;
          }
 
-         //cout << i << " " << j -1  << " "  << 0 << endl ; 
+
+
           
 
          int counter = 1;
