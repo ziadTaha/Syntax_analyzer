@@ -47,7 +47,7 @@ void FirstMaker::make() {
 
     for(auto l:language){
         set<string> set={};
-        if(isTerminal(l)||tokenize(l).size()==1||l=="e"){
+        if(isTerminal(l)||(tokenize(l).size()==1&&isTerminal(l))||l=="e"){
             set.insert(l);
             first[l]=set;
         }else if(!isTerminal(l)&&l!="e"){
@@ -59,9 +59,9 @@ void FirstMaker::make() {
         dummyFirst=first;
         for(auto production:this->Productions){
             for(auto product: production.second){
-                int wordCount=0;
                 vector<string>words=tokenize(product);
                 set<string> currentFirst;
+                int wordCount=0, k=words.size()-1;
                 for(auto w:first[words[0]]){
                     if(w!="e")
                         currentFirst.insert(w);
@@ -73,9 +73,11 @@ void FirstMaker::make() {
                             currentFirst.insert(w);
                     }
                 }
-                if(wordCount==words.size()-1)
+
+                if(wordCount==k&&first[words[k]].find("e") != first[words[k]].end())
                     currentFirst.insert("e");
                 first[product].insert(currentFirst.begin(),currentFirst.end());
+                first[production.first].insert(currentFirst.begin(),currentFirst.end());
             }
         }
     }while(first!=dummyFirst);

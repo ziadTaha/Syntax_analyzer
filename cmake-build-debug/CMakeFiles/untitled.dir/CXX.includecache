@@ -6,7 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/zeny/Documents/projects/parser/main.cpp
-iostream
+/home/zeny/Documents/projects/parser/FirstMaker.cpp
+FirstMaker.h
+/home/zeny/Documents/projects/parser/FirstMaker.h
+
+/home/zeny/Documents/projects/parser/FirstMaker.h
+bits/stdc++.h
 -
 
