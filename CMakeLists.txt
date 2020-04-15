@@ -3,4 +3,4 @@ project(untitled)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp FirstMaker.cpp FirstMaker.h)
+add_executable(untitled main.cpp FirstMaker.cpp FirstMaker.h TableBuilder.cpp TableBuilder.h)

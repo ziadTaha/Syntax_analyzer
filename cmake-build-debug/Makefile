@@ -150,6 +150,33 @@ FirstMaker.cpp.s:
 	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/FirstMaker.cpp.s
 .PHONY : FirstMaker.cpp.s
 
+TableBuilder.o: TableBuilder.cpp.o
+
+.PHONY : TableBuilder.o
+
+# target to build an object file
+TableBuilder.cpp.o:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/TableBuilder.cpp.o
+.PHONY : TableBuilder.cpp.o
+
+TableBuilder.i: TableBuilder.cpp.i
+
+.PHONY : TableBuilder.i
+
+# target to preprocess a source file
+TableBuilder.cpp.i:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/TableBuilder.cpp.i
+.PHONY : TableBuilder.cpp.i
+
+TableBuilder.s: TableBuilder.cpp.s
+
+.PHONY : TableBuilder.s
+
+# target to generate assembly for a file
+TableBuilder.cpp.s:
+	$(MAKE) -f CMakeFiles/untitled.dir/build.make CMakeFiles/untitled.dir/TableBuilder.cpp.s
+.PHONY : TableBuilder.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -189,6 +216,9 @@ help:
 	@echo "... FirstMaker.o"
 	@echo "... FirstMaker.i"
 	@echo "... FirstMaker.s"
+	@echo "... TableBuilder.o"
+	@echo "... TableBuilder.i"
+	@echo "... TableBuilder.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

@@ -27,8 +27,6 @@ private:
 public:
     FirstMaker(unordered_map<string, set<string>> &productions);
 
-    //FirstMaker(unordered_map<string, set<string>> &productions);
-
     void make();
 
     const unordered_map<string,set<string>>  &getF() const;
