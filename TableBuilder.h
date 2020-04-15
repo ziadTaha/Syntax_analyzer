@@ -5,6 +5,7 @@
 #ifndef UNTITLED_TABLEBUILDER_H
 #define UNTITLED_TABLEBUILDER_H
 #include <bits/stdc++.h>
+
 using namespace std;
 
 class TableBuilder {
@@ -21,7 +22,11 @@ private:
 
     set<string> terminals;
 
-    unordered_map<pair<string,string>, set<string>> &table;
+    class HashFunction;
+
+    struct indx;
+
+    unordered_map<indx, set<string>, HashFunction> table;
 
     void calcTerminals();
 };
