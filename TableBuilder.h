@@ -19,9 +19,7 @@ private:
 
     set<string> terminals;
 
-    struct hash_pair;
-
-    unordered_map<pair<string,string>, string, hash_pair> &table;
+    map<pair<string,string>, string> table;
 
     void calcTerminals();
 
@@ -31,9 +29,7 @@ private:
 
 public:
     TableBuilder(unordered_map<string, set<string>> &first, unordered_map<string, set<string>> &follow,
-                 unordered_map<string, set<string>> &productions,
-                 unordered_map<pair<string, string>, string, hash_pair> &table);
-
+                 unordered_map<string, set<string>> &productions);
     void build();
 };
 

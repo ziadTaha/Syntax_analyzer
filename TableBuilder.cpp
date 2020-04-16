@@ -8,25 +8,14 @@
 
 
 TableBuilder::TableBuilder(unordered_map<string, set<string>> &first, unordered_map<string, set<string>> &follow,
-                           unordered_map<string, set<string>> &productions,
-                           unordered_map<pair<string, string>, string, hash_pair> &table)
-        : first (first), follow(follow), productions(productions), table(table) {
+                           unordered_map<string, set<string>> &productions)
+        : first (first), follow(follow), productions(productions) {
 
     calcTerminals();
 }
 
-struct hash_pair {
-    template <class T1, class T2>
-    size_t operator()(const pair<T1, T2>& p) const
-    {
-        auto hash1 = hash<T1>{}(p.first);
-        auto hash2 = hash<T2>{}(p.second);
-        return hash1 ^ hash2;
-    }
-};
-
 void TableBuilder::build() {
-    unordered_map<pair<string, string>, set<string>, hash_pair> t;
+    map<pair<string,string>,string> t ={};
     for(auto production:this->productions){
         for(auto terminal:this->terminals){
             t[{production.first,terminal}]="error";
@@ -81,3 +70,4 @@ vector<string> TableBuilder::tokenize(string s) {
 bool TableBuilder::isTerminal(string s) {
     return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
 }
+
