@@ -7,7 +7,7 @@ class Parser
 private:
     /* data */
     
-    void readGrammer (string path) ; 
+  
 
     vector<string > stringToVector(string s) ;  
     string vectorToString(vector<string > vec);
@@ -19,13 +19,13 @@ private:
     
 
 public:
-    Parser(/* args */);
+    Parser();
     ~Parser();
     int trying  ; 
     map <string , vector <string> > nonTerminal ;
     void leftRecursion () ; 
     void leftFactoring () ; 
     void print() ; 
-    
+    void readGrammer (string path) ;   
 };
 
