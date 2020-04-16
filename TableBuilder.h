@@ -9,26 +9,32 @@
 using namespace std;
 
 class TableBuilder {
-public:
-    TableBuilder(unordered_map<string,set<string>>  &first, unordered_map<string,set<string>> &follow,unordered_map<string, set<string>> &productions);
 
-    void build();
 private:
-    unordered_map<string,set<string>> first;
+    unordered_map<string,set<string>> &first;
 
-    unordered_map<string,set<string>> follow;
+    unordered_map<string,set<string>> &follow;
 
     unordered_map<string, set<string>>& productions;
 
     set<string> terminals;
 
-    class HashFunction;
+    struct hash_pair;
 
-    struct indx;
-
-    unordered_map<indx, set<string>, HashFunction> table;
+    unordered_map<pair<string,string>, string, hash_pair> &table;
 
     void calcTerminals();
+
+    vector<string> tokenize(string s);
+
+    bool isTerminal(string s);
+
+public:
+    TableBuilder(unordered_map<string, set<string>> &first, unordered_map<string, set<string>> &follow,
+                 unordered_map<string, set<string>> &productions,
+                 unordered_map<pair<string, string>, string, hash_pair> &table);
+
+    void build();
 };
 
 
