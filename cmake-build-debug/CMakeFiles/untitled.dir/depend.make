@@ -8,5 +8,6 @@ CMakeFiles/untitled.dir/TableBuilder.cpp.o: ../TableBuilder.cpp
 CMakeFiles/untitled.dir/TableBuilder.cpp.o: ../TableBuilder.h
 
 CMakeFiles/untitled.dir/main.cpp.o: ../FirstMaker.h
+CMakeFiles/untitled.dir/main.cpp.o: ../TableBuilder.h
 CMakeFiles/untitled.dir/main.cpp.o: ../main.cpp
 
