@@ -11,11 +11,11 @@ using namespace std;
 class TableBuilder {
 
 private:
-    unordered_map<string,set<string>> &first;
+    unordered_map<string,set<string>> first;
 
-    unordered_map<string,set<string>> &follow;
+    unordered_map<string,set<string>> follow;
 
-    unordered_map<string, set<string>>& productions;
+    unordered_map<string, set<string>> productions;
 
     set<string> terminals;
 
@@ -28,8 +28,8 @@ private:
     bool isTerminal(string s);
 
 public:
-    TableBuilder(unordered_map<string, set<string>> &first, unordered_map<string, set<string>> &follow,
-                 unordered_map<string, set<string>> &productions);
+    TableBuilder(unordered_map<string, set<string>> first, unordered_map<string, set<string>> follow,
+                 unordered_map<string, set<string>> productions);
     void build();
 };
 

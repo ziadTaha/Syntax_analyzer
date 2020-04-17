@@ -7,8 +7,8 @@
 #include <utility>
 
 
-TableBuilder::TableBuilder(unordered_map<string, set<string>> &first, unordered_map<string, set<string>> &follow,
-                           unordered_map<string, set<string>> &productions)
+TableBuilder::TableBuilder(unordered_map<string, set<string>> first, unordered_map<string, set<string>> follow,
+                           unordered_map<string, set<string>> productions)
         : first (first), follow(follow), productions(productions) {
 
     calcTerminals();
@@ -24,8 +24,8 @@ void TableBuilder::build() {
             for(auto terminal:this->terminals){
                 if(this->first[product].find(terminal) != this->first[product].end()){
                     t[{production.first,terminal}]=product;
-                }if(this->follow[product].find(terminal) != this->follow[product].end()){
-                    if(this->first[product].find("e") != this->first[product].end())
+                }if(this->follow[production.first].find(terminal) != this->follow[production.first].end()){                       //se if it can be [product]
+                    if(this->first[production.first].find("e") != this->first[production.first].end())
                         t[{production.first,terminal}]="e";
                     else
                         t[{production.first,terminal}]="synch";
@@ -47,6 +47,7 @@ void TableBuilder::calcTerminals() {
             }
         }
     }
+    s.insert("$");
     this->terminals=s;
 }
 
