@@ -6,11 +6,11 @@
 
 #IncludeRegexTransform: 
 
-/home/zeny/Documents/projects/parser/FirstMaker.cpp
-FirstMaker.h
-/home/zeny/Documents/projects/parser/FirstMaker.h
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FollowMaker.cpp
+FollowMaker.h
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FollowMaker.h
 
-/home/zeny/Documents/projects/parser/FirstMaker.h
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FollowMaker.h
 bits/stdc++.h
 -
 

@@ -1,10 +1,13 @@
 #include <iostream>
 #include <bits/stdc++.h>
 #include "FirstMaker.h"
+#include "FollowMaker.h"
+
 using namespace std;
 
 int main() {
 
+    //constructing the productions manually
     unordered_map<string, set<string>> p;   //5   //6        //7  //8   //9         //10       //11
     vector<string>l={"E","E'","T","T'","F","T E'","'+' T E'","e","F T'","'*' F T'","'(' E ')'","'id'"};
     set<string> s;
@@ -35,8 +38,16 @@ int main() {
     s.insert(l[11]);
     p[l[4]]=s;
 
+    s.clear();
+
+    //trying the first maker
     FirstMaker fm=FirstMaker(p);
     fm.make();
+
+    FollowMaker follow = FollowMaker(p,fm.getF());
+    follow.setStart("E");
+    follow.make();
+
 
     cout << "n" << std::endl;
     return 0;
