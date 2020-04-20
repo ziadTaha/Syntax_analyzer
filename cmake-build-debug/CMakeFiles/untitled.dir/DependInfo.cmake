@@ -4,6 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/zeny/Documents/projects/parser/FirstMaker.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/FirstMaker.cpp.o"
+  "/home/zeny/Documents/projects/parser/TableBuilder.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/TableBuilder.cpp.o"
   "/home/zeny/Documents/projects/parser/main.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
