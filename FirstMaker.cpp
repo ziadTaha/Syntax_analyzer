@@ -63,19 +63,19 @@ void FirstMaker::make() {
                 set<string> currentFirst;
                 int wordCount=0, k=words.size()-1;
                 for(auto w:first[words[0]]){
-                    if(w!="e")
+                    if(w!="eeee")
                         currentFirst.insert(w);
                 }
-                while(first[words[wordCount]].find("e") != first[words[wordCount]].end()&&wordCount<words.size()-1){
+                while(first[words[wordCount]].find("eeee") != first[words[wordCount]].end()&&wordCount<words.size()-1){
                     wordCount++;
                     for(auto w:first[words[wordCount]]){
-                        if(w!="e")
+                        if(w!="eeee")
                             currentFirst.insert(w);
                     }
                 }
 
-                if(wordCount==k&&first[words[k]].find("e") != first[words[k]].end())
-                    currentFirst.insert("e");
+                if(wordCount==k&&first[words[k]].find("eeee") != first[words[k]].end())
+                    currentFirst.insert("eeee");
                 first[product].insert(currentFirst.begin(),currentFirst.end());
                 first[production.first].insert(currentFirst.begin(),currentFirst.end());
             }
