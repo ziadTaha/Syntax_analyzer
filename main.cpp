@@ -20,14 +20,19 @@ int main() {
 /*=======
 #include <bits/stdc++.h>
 #include "FirstMaker.h"
+<<<<<<< HEAD
 #include "TableBuilder.h"
+=======
+#include "FollowMaker.h"
+
+>>>>>>> follow
 using namespace std;
 
 int main() {
 
     //constructing the productions manually
     unordered_map<string, set<string>> p;   //5   //6        //7  //8   //9         //10       //11
-    vector<string>l={"E","E'","T","T'","F","T E'","'+' T E'","e","F T'","'*' F T'","'(' E ')'","'id'"};
+    vector<string>l={"E","E'","T","T'","F","T E'","'+' T E'","eeee","F T'","'*' F T'","'(' E ')'","'id'"};
     set<string> s;
 
     s.insert(l[5]);
@@ -62,6 +67,7 @@ int main() {
     FirstMaker fm=FirstMaker(p);
     fm.make();
 
+<<<<<<< HEAD
     //constructing the follow set manually
     unordered_map<string, set<string>> follow;
     s.insert("$");
@@ -77,6 +83,12 @@ int main() {
     //trying the table builder
     TableBuilder tb= TableBuilder(fm.getF(),follow,p);
     tb.build();
+=======
+    FollowMaker follow = FollowMaker(p,fm.getF());
+    follow.setStart("E");
+    follow.make();
+
+>>>>>>> follow
 
     cout << "n" << std::endl;
 >>>>>>> 384e23eba9a05e9e46d8b96bb76645e10252a1aa

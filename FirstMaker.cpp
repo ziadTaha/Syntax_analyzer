@@ -47,10 +47,10 @@ void FirstMaker::make() {
 
     for(auto l:language){
         set<string> set={};
-        if(isTerminal(l)||(tokenize(l).size()==1&&isTerminal(l))||l=="e"){
+        if(isTerminal(l)||(tokenize(l).size()==1&&isTerminal(l))||l=="eeee"){
             set.insert(l);
             first[l]=set;
-        }else if(!isTerminal(l)&&l!="e"){
+        }else if(!isTerminal(l)&&l!="eeee"){
             first[l]=set;
         }
     }
@@ -100,4 +100,3 @@ vector<string> FirstMaker::tokenize(string s) {
     }
     return tokens;
 }
-

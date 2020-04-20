@@ -4,9 +4,10 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/zeny/Documents/projects/parser/FirstMaker.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/FirstMaker.cpp.o"
-  "/home/zeny/Documents/projects/parser/TableBuilder.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/TableBuilder.cpp.o"
-  "/home/zeny/Documents/projects/parser/main.cpp" "/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.o"
+  "C:/Users/Ahmed/Desktop/Syntax_analyzer/FirstMaker.cpp" "C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/untitled.dir/FirstMaker.cpp.obj"
+  "C:/Users/Ahmed/Desktop/Syntax_analyzer/FollowMaker.cpp" "C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/untitled.dir/FollowMaker.cpp.obj"
+  "C:/Users/Ahmed/Desktop/Syntax_analyzer/TableBuilder.cpp" "C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/untitled.dir/TableBuilder.cpp.obj"
+  "C:/Users/Ahmed/Desktop/Syntax_analyzer/main.cpp" "C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/untitled.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

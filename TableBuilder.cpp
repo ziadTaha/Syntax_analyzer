@@ -67,7 +67,6 @@ vector<string> TableBuilder::tokenize(string s) {
     stringstream check1(s);
 
     string intermediate;
-
     // Tokenizing w.r.t. space ' '
     while(getline(check1, intermediate, ' '))
     {
@@ -78,5 +77,9 @@ vector<string> TableBuilder::tokenize(string s) {
 
 bool TableBuilder::isTerminal(string s) {
     return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
+
 }
 
+bool TableBuilder::isTerminal(string s) {
+    return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
+}

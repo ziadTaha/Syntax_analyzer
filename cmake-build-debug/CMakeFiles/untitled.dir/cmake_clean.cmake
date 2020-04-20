@@ -1,8 +1,11 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/untitled.dir/FirstMaker.cpp.o"
-  "CMakeFiles/untitled.dir/TableBuilder.cpp.o"
-  "CMakeFiles/untitled.dir/main.cpp.o"
-  "untitled"
+  "CMakeFiles/untitled.dir/FirstMaker.cpp.obj"
+  "CMakeFiles/untitled.dir/FollowMaker.cpp.obj"
+  "CMakeFiles/untitled.dir/TableBuilder.cpp.obj"
+  "CMakeFiles/untitled.dir/main.cpp.obj"
+  "libuntitled.dll.a"
+  "untitled.exe"
+  "untitled.exe.manifest"
   "untitled.pdb"
 )
 

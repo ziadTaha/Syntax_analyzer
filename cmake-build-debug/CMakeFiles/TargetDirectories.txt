@@ -1,3 +1,3 @@
-/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/untitled.dir
-/home/zeny/Documents/projects/parser/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/untitled.dir
+C:/Users/Ahmed/Desktop/Syntax_analyzer/cmake-build-debug/CMakeFiles/rebuild_cache.dir

@@ -6,6 +6,7 @@
 
 #IncludeRegexTransform: 
 
+<<<<<<< HEAD
 /home/zeny/Documents/projects/parser/TableBuilder.cpp
 TableBuilder.h
 /home/zeny/Documents/projects/parser/TableBuilder.h
@@ -13,6 +14,13 @@ utility
 -
 
 /home/zeny/Documents/projects/parser/TableBuilder.h
+=======
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FirstMaker.cpp
+FirstMaker.h
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FirstMaker.h
+
+C:/Users/Ahmed/Desktop/Syntax_analyzer/FirstMaker.h
+>>>>>>> follow
 bits/stdc++.h
 -
 

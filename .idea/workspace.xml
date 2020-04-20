@@ -14,8 +14,18 @@
     <list default="true" id="733a4295-c065-4c9e-b495-c89d5c1d5ccd" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/FirstMaker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FirstMaker.cpp" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/TableBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TableBuilder.cpp" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/FollowMaker.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/FollowMaker.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TableBuilder.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/TableBuilder.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TableBuilder.h" beforeDir="false" afterPath="$PROJECT_DIR$/TableBuilder.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/untitled.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/untitled.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/main.cpp" afterDir="false" />
+>>>>>>> follow
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -50,6 +60,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="untitled" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="untitled" TARGET_NAME="untitled" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="untitled" RUN_TARGET_NAME="untitled">
@@ -75,6 +98,7 @@
       <workItem from="1586652433413" duration="4655000" />
       <workItem from="1586688819522" duration="21604000" />
       <workItem from="1586827251073" duration="1216000" />
+<<<<<<< HEAD
       <workItem from="1586905399383" duration="12702000" />
       <workItem from="1586959500842" duration="2737000" />
       <workItem from="1587006082624" duration="5263000" />
@@ -83,6 +107,16 @@
       <workItem from="1587134675454" duration="6432000" />
       <workItem from="1587164197782" duration="1339000" />
       <workItem from="1587415400631" duration="491000" />
+=======
+      <workItem from="1586905399383" duration="12045000" />
+      <workItem from="1586957808686" duration="2524000" />
+      <workItem from="1587041333592" duration="4977000" />
+      <workItem from="1587158318884" duration="2191000" />
+      <workItem from="1587172710578" duration="1496000" />
+      <workItem from="1587187892757" duration="1277000" />
+      <workItem from="1587318772629" duration="5320000" />
+      <workItem from="1587416523703" duration="723000" />
+>>>>>>> follow
     </task>
     <task id="LOCAL-00001" summary="initiating project">
       <created>1586653629600</created>
@@ -229,8 +263,17 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/main.cpp</url>
+<<<<<<< HEAD
           <line>61</line>
+=======
+          <line>51</line>
+>>>>>>> follow
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/FollowMaker.cpp</url>
+          <line>20</line>
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
