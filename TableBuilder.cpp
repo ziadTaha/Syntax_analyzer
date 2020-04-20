@@ -79,7 +79,3 @@ bool TableBuilder::isTerminal(string s) {
     return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
 
 }
-
-bool TableBuilder::isTerminal(string s) {
-    return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
-}

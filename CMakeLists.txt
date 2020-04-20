@@ -1,6 +1,17 @@
 cmake_minimum_required(VERSION 3.15)
-project(untitled)
+project(Syntax_analyzer)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(untitled main.cpp FirstMaker.cpp FirstMaker.h TableBuilder.cpp TableBuilder.h FollowMaker.cpp FollowMaker.h)
+include_directories(.)
+
+add_executable(Syntax_analyzer
+        FirstMaker.cpp
+        FirstMaker.h
+        FollowMaker.cpp
+        FollowMaker.h
+        main.cpp
+        Parser.cpp
+        Parser.h
+        TableBuilder.cpp
+        TableBuilder.h)
