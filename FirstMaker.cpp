@@ -47,10 +47,10 @@ void FirstMaker::make() {
 
     for(auto l:language){
         set<string> set={};
-        if(isTerminal(l)||(tokenize(l).size()==1&&isTerminal(l))||l=="e"){
+        if(isTerminal(l)||(tokenize(l).size()==1&&isTerminal(l))||l=="eeee"){
             set.insert(l);
             first[l]=set;
-        }else if(!isTerminal(l)&&l!="e"){
+        }else if(!isTerminal(l)&&l!="eeee"){
             first[l]=set;
         }
     }
@@ -63,19 +63,19 @@ void FirstMaker::make() {
                 set<string> currentFirst;
                 int wordCount=0, k=words.size()-1;
                 for(auto w:first[words[0]]){
-                    if(w!="e")
+                    if(w!="eeee")
                         currentFirst.insert(w);
                 }
-                while(first[words[wordCount]].find("e") != first[words[wordCount]].end()&&wordCount<words.size()-1){
+                while(first[words[wordCount]].find("eeee") != first[words[wordCount]].end()&&wordCount<words.size()-1){
                     wordCount++;
                     for(auto w:first[words[wordCount]]){
-                        if(w!="e")
+                        if(w!="eeee")
                             currentFirst.insert(w);
                     }
                 }
 
-                if(wordCount==k&&first[words[k]].find("e") != first[words[k]].end())
-                    currentFirst.insert("e");
+                if(wordCount==k&&first[words[k]].find("eeee") != first[words[k]].end())
+                    currentFirst.insert("eeee");
                 first[product].insert(currentFirst.begin(),currentFirst.end());
                 first[production.first].insert(currentFirst.begin(),currentFirst.end());
             }
@@ -100,4 +100,3 @@ vector<string> FirstMaker::tokenize(string s) {
     }
     return tokens;
 }
-

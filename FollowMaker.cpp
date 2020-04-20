@@ -29,20 +29,20 @@ void FollowMaker::make() {
                 for (auto iterr = tokens.rbegin();
                      iterr != tokens.rend(); iterr++) {
                     string xx = *iterr;
-                    if (!isTerminal(*iterr) && *iterr != "e") {
+                    if (!isTerminal(*iterr) && *iterr != "eeee") {
                         Follow[*iterr].insert(trailer.begin(), trailer.end());
-                        if (First[*iterr].find("e") != First[*iterr].end()) {
+                        if (First[*iterr].find("eeee") != First[*iterr].end()) {
                             trailer.insert(First[*iterr].begin(),
                                            First[*iterr].end());
-                            trailer.erase("e");
+                            trailer.erase("eeee");
                             trailer.insert("$");
                         } else {
                             trailer = First[*iterr];
-                            trailer.erase("e");
+                            trailer.erase("eeee");
                         }
                     } else {
                         trailer = First[*iterr];
-                        trailer.erase("e");
+                        trailer.erase("eeee");
                     }
                 }
             }

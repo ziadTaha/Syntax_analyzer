@@ -9,7 +9,7 @@ int main() {
 
     //constructing the productions manually
     unordered_map<string, set<string>> p;   //5   //6        //7  //8   //9         //10       //11
-    vector<string>l={"E","E'","T","T'","F","T E'","'+' T E'","e","F T'","'*' F T'","'(' E ')'","'id'"};
+    vector<string>l={"E","E'","T","T'","F","T E'","'+' T E'","eeee","F T'","'*' F T'","'(' E ')'","'id'"};
     set<string> s;
 
     s.insert(l[5]);
