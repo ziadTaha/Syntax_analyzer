@@ -91,3 +91,17 @@ vector<string> FollowMaker::tokenize(string s) {
     }
     return tokens;
 }
+
+
+
+void FollowMaker::print() {
+
+    cout << "-----------------------------"  << endl ; 
+    for(auto umap : Follow) {
+        cout << umap.first << ":   " ;
+        for(auto s:umap.second){
+            cout << s << "  " ;
+        }
+        cout << endl ; 
+    }
+}

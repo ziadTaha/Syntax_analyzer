@@ -346,7 +346,10 @@ unordered_map<string , set<string>> Parser::print()
    }
    cout  << "----------------------------" << endl ; 
    
+   newMap.erase(""); 
+
    for (auto a : newMap){
+      cout << ":" << endl ; 
       for (auto b : a.second){
          cout << a.first << " " << b << endl;
       } 

@@ -39,6 +39,8 @@ public:
     unordered_map<string, set<string>> getFollow();
 
     void setFollow(unordered_map<string, set<string>> f);
+    
+    void print();
 
 //    const set<string> &getLanguage() const;
 //

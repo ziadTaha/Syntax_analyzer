@@ -1,32 +1,38 @@
-A a 
-A c A d
-S e 
+A 'a' 
+A 'c' A 'd'
+S 'a' 'b' S  
+S 'c' A 'd' 'b' S  
+S 'e' 
 S eeee
-S a b S  
-S c A d b S  
 ----------------------------
-S a b S  
-S c A d b S  
-S e 
+:
+S 'a' 'b' S  
+S 'c' A 'd' 'b' S  
+S 'e' 
 S eeee
-A a 
-A c A d
+:
+A 'a' 
+A 'c' A 'd'
 ----------------------------
 -----------------------------
+S:   'a'  'c'  'e'  eeee  
+A:   'a'  'c'  
+'b':   'b'  
+'a' :   'a'  
 eeee:   eeee  
-e:   
-a :   
-e :   
-c A d b S  :   
-a:   
-S:   eeee  
-d:   
+'a' 'b' S  :   'a'  
+'e' :   'e'  
+'c' A 'd' 'b' S  :   'c'  
 :   
-A:   
-a b S  :   
-b:   
-c:   
-c A d:   
+'a':   'a'  
+'e':   'e'  
+'c' A 'd':   'c'  
+'c':   'c'  
+'d':   'd'  
+-----------------------------
+:   'c'  'e'  
+S:   $  
+A:   'd'  
 METHOD_BODY 0 int
 error in table
 

@@ -17,14 +17,15 @@ int main() {
     //p.leftFactoring() ;
     p.readGrammer("input.txt") ; 
     p.leftRecursion();
-    //p.leftFactoring() ; 
+    p.leftFactoring() ; 
     unordered_map<string, set<string>> pp = p.print() ;   
     FirstMaker fm = FirstMaker( pp);
     fm.make(); 
     fm.printin() ; 
     FollowMaker follow = FollowMaker( pp , fm.getF() );
-    follow.setStart("METHOD_BODY");
+    follow.setStart("S");
     follow.make();
+    follow.print();
     TableBuilder tb= TableBuilder(fm.getF(),follow.getFollow(), pp);
     tb.build();
     tb.lastInput("METHOD_BODY");

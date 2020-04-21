@@ -1,2 +1,2 @@
-#S = A b S | e | eeee
-#A = a | c A d
+#S = A 'b' S | 'e' | eeee
+#A = 'a' | 'c' A 'd'
