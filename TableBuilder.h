@@ -31,6 +31,7 @@ public:
     TableBuilder(unordered_map<string, set<string>> first, unordered_map<string, set<string>> follow,
                  unordered_map<string, set<string>> productions);
     void build();
+    void lastInput(string firstNon);
 };
 
 

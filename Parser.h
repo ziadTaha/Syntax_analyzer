@@ -25,7 +25,7 @@ public:
     map <string , vector <string> > nonTerminal ;
     void leftRecursion () ; 
     void leftFactoring () ; 
-    void print() ; 
+    unordered_map<string , set<string>>  print() ; 
     void readGrammer (string path) ;   
 };
 

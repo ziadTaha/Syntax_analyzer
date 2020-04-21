@@ -331,11 +331,18 @@ void Parser::leftFactoring()
    }
 }
 
-void Parser::print()
+unordered_map<string , set<string>> Parser::print()
 {
-   for (auto a : nonTerminal){
-      for (auto b : a.second)
+  unordered_map <string , set<string>> newMap ; 
+  for (auto a : nonTerminal){
+     set <string> newSet ; 
+      for (auto b : a.second){
+         newSet.insert(b) ;
          cout << a.first << " " << b << endl;
-      cout  << "----------------------------" << endl ; 
+      }
+      newMap[a.first] = newSet ; 
+     // cout  << "----------------------------" << endl ; 
    }
+
+   return newMap ; 
 }

@@ -79,3 +79,81 @@ bool TableBuilder::isTerminal(string s) {
     return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
 
 }
+
+void TableBuilder::lastInput(string firstNon) {
+   
+    vector<string> inputWords ; 
+   
+   // reading input 
+    fstream file; 
+    string word, t, q, filename; 
+    filename = "outputPhase1.txt"; 
+    file.open(filename.c_str()); 
+  
+    while (file >> word) 
+    { 
+       inputWords.push_back(word) ; 
+    } 
+
+    // ---------- 
+    stack <string>  s ; 
+   // s.push("$") ;
+    s.push(firstNon) ; 
+    inputWords.push_back("$") ;  
+    int i = 0 ; 
+    while (!s.empty() && i < inputWords.size())
+    {
+        string stackP = s.top() ; 
+        s.pop() ;
+        cout << stackP << " " << i << " " << inputWords[i] << endl ; 
+        if (stackP == "synch") {
+            cout << "error synch \n" ;
+            continue ;  
+        }
+
+        if (stackP == "eeee") {
+            continue ;  
+        }
+
+        if (!isTerminal(stackP)){
+          // may the string from table must spilt
+          if ( table[{ stackP , inputWords[i] }] != "" ) 
+           s.push(table[{ stackP , inputWords[i] }]) ;
+           else
+           {
+               cout << "error in table\n" << endl ; 
+               continue ; 
+           }
+           
+          // handel error of not found , i can handel it alone as prev but of good message i prefer not 
+          if (s.top() == "error") {
+            cout << "Error:(illegal " << stackP << ") – discard " << inputWords[i]  << endl ; 
+            s.push(stackP) ; 
+            i++ ; 
+          }else {
+            //cout << stackP << "to " << s.top() << endl ; 
+          }
+          continue ;      
+        } 
+
+        // here is  terminal 
+        stackP.substr( 1 , stackP.size() -1  ) ; // tryig to remove ' ' 
+
+        if (stackP != inputWords[i]) {
+             cout << "Error: missing "<< inputWords[i] << ", inserted \n" ;
+             continue ; 
+        }
+
+        // they are similar 
+        cout << "match " << stackP << endl ;
+        i++ ; 
+    }
+
+    if (s.empty() && i == inputWords.size() ){
+        cout << "done" << endl ; 
+    }else {
+        cout << "not matched input" << endl ; 
+    }
+    
+
+}
