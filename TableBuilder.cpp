@@ -162,3 +162,11 @@ void TableBuilder::lastInput(string firstNon) {
     
 
 }
+
+void TableBuilder::print() {
+    cout<<endl<<"------table--------";
+    for (auto t:this->table){
+        cout << t.first.first<<" ,"<<t.first.second<<" :";
+        cout <<t.second<<endl;
+    }
+}

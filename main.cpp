@@ -28,6 +28,7 @@ int main() {
     follow.print();
     TableBuilder tb= TableBuilder(fm.getF(),follow.getFollow(), pp);
     tb.build();
+    tb.print();
     tb.lastInput("METHOD_BODY");
     std::cout << "this is main!" << std::endl;
     return 0 ; 
