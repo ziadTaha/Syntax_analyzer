@@ -23,7 +23,7 @@ int main() {
     fm.make(); 
     fm.printin() ; 
     FollowMaker follow = FollowMaker( pp , fm.getF() );
-    follow.setStart("S");
+    follow.setStart("METHOD_BODY");
     follow.make();
     follow.print();
     TableBuilder tb= TableBuilder(fm.getF(),follow.getFollow(), pp);

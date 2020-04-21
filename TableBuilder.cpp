@@ -34,7 +34,7 @@ void TableBuilder::build() {
                         }
                         t[{production.first,terminal}]="eeee";
                     }
-                    else{
+                    else if (t.find({production.first,terminal}) == t.end()){
                         t[{production.first,terminal}]="synch";
                     }
                 }
@@ -56,7 +56,7 @@ void TableBuilder::calcTerminals() {
             }
         }
     }
-    s.insert("$");
+    s.insert("\'$\'");
     this->terminals=s;
 }
 

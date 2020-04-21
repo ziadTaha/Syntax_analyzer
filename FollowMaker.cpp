@@ -14,7 +14,7 @@ void FollowMaker::make() {
 
     // add $ to the first one
     set<string> temp;
-    temp.insert("$");
+    temp.insert("\'$\'");
     Follow[start] = temp;
 
     bool test = true;
@@ -35,7 +35,7 @@ void FollowMaker::make() {
                             trailer.insert(First[*iterr].begin(),
                                            First[*iterr].end());
                             trailer.erase("eeee");
-                            trailer.insert("$");
+                            trailer.insert("\'$\'");
                         } else {
                             trailer = First[*iterr];
                             trailer.erase("eeee");
