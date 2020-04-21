@@ -29,7 +29,7 @@ void TableBuilder::build() {
                     if(this->first[production.first].find("eeee") != this->first[production.first].end()){
                         if(this->productions[production.first].find("eeee") != this->productions[production.first].end()&&
                            thisSlotIsTaken){
-                            cout<<"multiple productions in one slot error !!";
+                            cout<<"multiple productions in one slot error !!" << endl ;
                             break;
                         }
                         t[{production.first,terminal}]="eeee";
@@ -110,7 +110,7 @@ void TableBuilder::lastInput(string firstNon) {
     {
         string stackP = s.top() ; 
         s.pop() ;
-        cout << stackP << " " << i << endl ; 
+        cout << stackP << " " << i << " " << inputWords[i] << endl ; 
         if (stackP == "synch") {
             cout << "error synch \n" ;
             continue ;  
