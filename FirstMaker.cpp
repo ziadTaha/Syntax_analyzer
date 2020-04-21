@@ -100,3 +100,15 @@ vector<string> FirstMaker::tokenize(string s) {
     }
     return tokens;
 }
+
+void FirstMaker::printin() {
+
+    cout << "-----------------------------"  << endl ; 
+    for(auto umap : this->getF()) {
+        cout << umap.first << ":   " ;
+        for(auto s:umap.second){
+            cout << s << "  " ;
+        }
+        cout << endl ; 
+    }
+}

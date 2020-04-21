@@ -29,7 +29,7 @@ void TableBuilder::build() {
                     if(this->first[production.first].find("eeee") != this->first[production.first].end()){
                         if(this->productions[production.first].find("eeee") != this->productions[production.first].end()&&
                            thisSlotIsTaken){
-                            cout<<"multiple productions in one slot error !!";
+                            cout<<"multiple productions in one slot error !!" << endl ;
                             break;
                         }
                         t[{production.first,terminal}]="eeee";
@@ -50,8 +50,9 @@ void TableBuilder::calcTerminals() {
         for( const auto& product:production.second){
             vector<string>words=tokenize(product);
             for(const auto& word : words){
-                if(isTerminal(word))
+                if(isTerminal(word)){
                     s.insert(word);
+                }
             }
         }
     }
@@ -79,7 +80,11 @@ bool TableBuilder::isTerminal(string s) {
     return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
 
 }
-
+/*
+bool TableBuilder::isTerminal(string s) {
+    return (s[0]=='\''&&s[s.size()-1]=='\''&&s.find(' ')==string::npos);
+}
+*/
 void TableBuilder::lastInput(string firstNon) {
    
     vector<string> inputWords ; 

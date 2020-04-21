@@ -127,7 +127,7 @@ string Parser::vectorToString(vector<string> vec)
    if (!vec.empty())
    {
       std::copy(vec.begin(), vec.end(),
-                std::ostream_iterator<string>(vts, " "));
+      std::ostream_iterator<string>(vts, " "));
    }
    return vts.str();
 }
@@ -334,6 +334,7 @@ void Parser::leftFactoring()
 unordered_map<string , set<string>> Parser::print()
 {
   unordered_map <string , set<string>> newMap ; 
+  
   for (auto a : nonTerminal){
      set <string> newSet ; 
       for (auto b : a.second){
@@ -343,6 +344,19 @@ unordered_map<string , set<string>> Parser::print()
       newMap[a.first] = newSet ; 
      // cout  << "----------------------------" << endl ; 
    }
+   cout  << "----------------------------" << endl ; 
+   
+   newMap.erase(""); 
+
+   for (auto a : newMap){
+      cout << ":" << endl ; 
+      for (auto b : a.second){
+         cout << a.first << " " << b << endl;
+      } 
+   }
+
+    cout  << "----------------------------" << endl ; 
+
 
    return newMap ; 
 }
