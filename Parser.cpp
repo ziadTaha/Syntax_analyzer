@@ -1,10 +1,6 @@
 #include "Parser.h"
-#include <vector>
-#include <string>
-#include <algorithm>
-#include <sstream>
-#include <iterator>
-#include <iostream>
+#include <bits/stdc++.h>
+
 
 using namespace std;
 
@@ -23,7 +19,7 @@ void Parser::readGrammer(string path)
 
    vector<string> allForT ; 
    string Tname ;  
-   while (std::getline(infile, line))
+   while (getline(infile, line))
    {
       int i = 0;
       while (line[i] == ' ')
@@ -331,6 +327,13 @@ void Parser::leftFactoring()
    }
 }
 
+// trim from end
+static inline std::string &rtrim(std::string &s) {
+    s.erase(std::find_if(s.rbegin(), s.rend(),
+                         std::not1(std::ptr_fun<int, int>(std::isspace))).base(), s.end());
+    return s;
+}
+
 unordered_map<string , set<string>> Parser::print()
 {
   unordered_map <string , set<string>> newMap ; 
@@ -338,10 +341,10 @@ unordered_map<string , set<string>> Parser::print()
   for (auto a : nonTerminal){
      set <string> newSet ; 
       for (auto b : a.second){
-         newSet.insert(b) ;
+         newSet.insert(rtrim(b)) ;
          cout << a.first << " " << b << endl;
       }
-      newMap[a.first] = newSet ; 
+      newMap[a.first] = newSet ;
      // cout  << "----------------------------" << endl ; 
    }
    cout  << "----------------------------" << endl ; 
