@@ -21,9 +21,9 @@ void FollowMaker::make() {
     while (test) {
         test = false;
         for (auto p  : Productions) {
-            set<string> trailer = Follow[p.first];
             for (auto iter = p.second.rbegin();
                  iter != p.second.rend(); iter++) {
+                set<string> trailer = Follow[p.first];
                 string x = *iter;
                 vector<string> tokens = tokenize(*iter);
                 for (auto iterr = tokens.rbegin();
