@@ -1,7 +1,11 @@
+#include <bits/stdc++.h>
 #include <iostream>
-
+#include "FollowMaker.h"
+#include "FirstMaker.h"
 #include "Parser.h"
+#include "TableBuilder.h"
 
+using namespace std ; 
 
 int main() {
     Parser p ; 
@@ -13,14 +17,22 @@ int main() {
     //p.leftFactoring() ;
     p.readGrammer("input.txt") ; 
     p.leftRecursion();
-    p.leftFactoring() ;  
-    p.print() ; 
+    p.leftFactoring() ; 
+    unordered_map<string, set<string>> pp = p.print() ;   
+    FirstMaker fm = FirstMaker( pp);
+    fm.make(); 
+    FollowMaker follow = FollowMaker( pp , fm.getF() );
+    follow.setStart("METHOD_BODY");
+    follow.make();
+    TableBuilder tb= TableBuilder(fm.getF(),follow.getFollow(), pp);
+    tb.build();
+    tb.lastInput("METHOD_BODY");
     std::cout << "this is main!" << std::endl;
 }
 /*=======
 #include <bits/stdc++.h>
 #include "FirstMaker.h"
-<<<<<<< HEAD
+//<<<<<<< HEAD
 #include "TableBuilder.h"
 =======
 #include "FollowMaker.h"
@@ -83,7 +95,7 @@ int main() {
     //trying the table builder
     TableBuilder tb= TableBuilder(fm.getF(),follow,p);
     tb.build();
-=======
+//=======
     FollowMaker follow = FollowMaker(p,fm.getF());
     follow.setStart("E");
     follow.make();

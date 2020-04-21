@@ -13,7 +13,6 @@ private:
     string vectorToString(vector<string > vec);
     void immediateLeftRecursion(string a,vector <string> ex);
     void replaceAwithB(string a,string b);
-
     vector<string> oring( string s) ;
 
     
@@ -25,7 +24,7 @@ public:
     map <string , vector <string> > nonTerminal ;
     void leftRecursion () ; 
     void leftFactoring () ; 
-    void print() ; 
+    unordered_map <string , set<string>> print() ; 
     void readGrammer (string path) ;   
 };
 
