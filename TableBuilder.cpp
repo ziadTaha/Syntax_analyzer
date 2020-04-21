@@ -97,20 +97,21 @@ void TableBuilder::lastInput(string firstNon) {
   
     while (file >> word) 
     { 
+        word = "\'" + word + "\'" ; 
        inputWords.push_back(word) ; 
     } 
 
     // ---------- 
     stack <string>  s ; 
-   // s.push("$") ;
+    s.push("\'$\'") ;  
     s.push(firstNon) ; 
-    inputWords.push_back("$") ;  
+    inputWords.push_back("\'$\'") ;  
     int i = 0 ; 
     while (!s.empty() && i < inputWords.size())
     {
         string stackP = s.top() ; 
         s.pop() ;
-        cout << stackP << " " << i << " " << inputWords[i] << endl ; 
+      //  cout << "ssss "  << stackP << " " << i << " " << inputWords[i] << endl ; 
         if (stackP == "synch") {
             cout << "error synch \n" ;
             continue ;  
@@ -122,27 +123,34 @@ void TableBuilder::lastInput(string firstNon) {
 
         if (!isTerminal(stackP)){
           // may the string from table must spilt
-          if ( table[{ stackP , inputWords[i] }] != "" ) 
-           s.push(table[{ stackP , inputWords[i] }]) ;
-           else
-           {
-               cout << "error in table\n" << endl ; 
+          if ( table[{ stackP , inputWords[i] }] != "" ){ 
+            vector <string> ss  =  tokenize( table[{ stackP , inputWords[i] }]) ;
+            for ( int j = ss.size() -1 ; j >= 0 ; j-- ){
+                if (ss[j] != " " && ss[j] != "")
+                 s.push(ss[j]) ;
+            }
+          }
+          else
+          {
+               cout << "error in table\n"  ;
+               cout << "Www " << stackP << " ff " << inputWords[i] << endl ;  
                continue ; 
-           }
+          }
            
           // handel error of not found , i can handel it alone as prev but of good message i prefer not 
           if (s.top() == "error") {
             cout << "Error:(illegal " << stackP << ") – discard " << inputWords[i]  << endl ; 
+            s.pop();
             s.push(stackP) ; 
             i++ ; 
           }else {
-            //cout << stackP << "to " << s.top() << endl ; 
+            cout << stackP << " to " << table[{ stackP , inputWords[i] }] << endl ; 
           }
           continue ;      
         } 
 
         // here is  terminal 
-        stackP.substr( 1 , stackP.size() -1  ) ; // tryig to remove ' ' 
+      //  stackP.substr( 1 , stackP.size() -1  ) ; // tryig to remove ' ' 
 
         if (stackP != inputWords[i]) {
              cout << "Error: missing "<< inputWords[i] << ", inserted \n" ;
