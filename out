@@ -1,59 +1,34 @@
-ASSIGNMENT 'id' '=' EXPRESSION ';'
+A a 
+A c A d
+S e 
+S eeee
+S a b S  
+S c A d b S  
 ----------------------------
-DECLARATION PRIMITIVE_TYPE 'id' ';'
+S a b S  
+S c A d b S  
+S e 
+S eeee
+A a 
+A c A d
 ----------------------------
-EXPRESSION SIMPLE_EXPRESSION EXPRESSION0
-----------------------------
-EXPRESSION0 'relop' SIMPLE_EXPRESSION
-EXPRESSION0 eeee
-----------------------------
-FACTOR '(' EXPRESSION ')'
-FACTOR 'id' 
-FACTOR 'num' 
-----------------------------
-IF 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
-----------------------------
-METHOD_BODY STATEMENT_LIST
-----------------------------
-PRIMITIVE_TYPE 'float'
-PRIMITIVE_TYPE 'int' 
-----------------------------
-SIGN '+' 
-SIGN '-'
-----------------------------
-SIMPLE_EXPRESSION '+' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION '-' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION TERM SIMPLE_EXPRESSION' 
-----------------------------
-SIMPLE_EXPRESSION' eeee
-SIMPLE_EXPRESSION' ‘addop’ TERM SIMPLE_EXPRESSION' 
-----------------------------
-STATEMENT 'float' 'id' ';'  
-STATEMENT 'id' '=' EXPRESSION ';'  
-STATEMENT 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'  
-STATEMENT 'int' 'id' ';'  
-STATEMENT WHILE
-----------------------------
-STATEMENT_LIST 'float' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST 'id' '=' EXPRESSION ';' STATEMENT_LIST' 
-STATEMENT_LIST 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST' 
-STATEMENT_LIST 'int' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST WHILE STATEMENT_LIST' 
-----------------------------
-STATEMENT_LIST' 'float' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'id' '=' EXPRESSION ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST'  
-STATEMENT_LIST' 'int' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' WHILE STATEMENT_LIST'  
-STATEMENT_LIST' eeee
-----------------------------
-TERM '(' EXPRESSION ')' TERM' 
-TERM 'id' TERM' 
-TERM 'num' TERM' 
-----------------------------
-TERM' 'mulop' FACTOR TERM' 
-TERM' eeee
-----------------------------
-WHILE 'while' '(' EXPRESSION ')' '{' STATEMENT '}'
-----------------------------
+-----------------------------
+eeee:   eeee  
+e:   
+a :   
+e :   
+c A d b S  :   
+a:   
+S:   eeee  
+d:   
+:   
+A:   
+a b S  :   
+b:   
+c:   
+c A d:   
+METHOD_BODY 0 int
+error in table
+
+not matched input
 this is main!
