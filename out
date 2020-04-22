@@ -4,204 +4,468 @@ EXPRESSION SIMPLE_EXPRESSION EXPRESSION0
 EXPRESSION0 'relop' SIMPLE_EXPRESSION
 EXPRESSION0 eeee
 FACTOR '(' EXPRESSION ')'
-FACTOR 'id' 
-FACTOR 'num' 
+FACTOR 'id'
+FACTOR 'num'
 IF 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
 METHOD_BODY STATEMENT_LIST
 PRIMITIVE_TYPE 'float'
-PRIMITIVE_TYPE 'int' 
-SIGN '+' 
+PRIMITIVE_TYPE 'int'
+SIGN '+'
 SIGN '-'
-SIMPLE_EXPRESSION '+' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION '-' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION TERM SIMPLE_EXPRESSION' 
+SIMPLE_EXPRESSION SIGN TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION TERM SIMPLE_EXPRESSION'
 SIMPLE_EXPRESSION' eeee
-SIMPLE_EXPRESSION' ‘addop’ TERM SIMPLE_EXPRESSION' 
-STATEMENT 'float' 'id' ';'  
-STATEMENT 'id' '=' EXPRESSION ';'  
-STATEMENT 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'  
-STATEMENT 'int' 'id' ';'  
+SIMPLE_EXPRESSION' ‘addop’ TERM SIMPLE_EXPRESSION'
+STATEMENT ASSIGNMENT
+STATEMENT DECLARATION
+STATEMENT IF
 STATEMENT WHILE
-STATEMENT_LIST 'float' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST 'id' '=' EXPRESSION ';' STATEMENT_LIST' 
-STATEMENT_LIST 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST' 
-STATEMENT_LIST 'int' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST WHILE STATEMENT_LIST' 
-STATEMENT_LIST' 'float' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'id' '=' EXPRESSION ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST'  
-STATEMENT_LIST' 'int' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' WHILE STATEMENT_LIST'  
+STATEMENT_LIST STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' STATEMENT STATEMENT_LIST'
 STATEMENT_LIST' eeee
-TERM '(' EXPRESSION ')' TERM' 
-TERM 'id' TERM' 
-TERM 'num' TERM' 
-TERM' 'mulop' FACTOR TERM' 
+TERM FACTOR TERM'
+TERM' 'mulop' FACTOR TERM'
 TERM' eeee
 WHILE 'while' '(' EXPRESSION ')' '{' STATEMENT '}'
 ----------------------------
 :
-TERM' 'mulop' FACTOR TERM' 
-TERM' eeee
-:
-STATEMENT_LIST' 'float' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'id' '=' EXPRESSION ';' STATEMENT_LIST'  
-STATEMENT_LIST' 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST'  
-STATEMENT_LIST' 'int' 'id' ';' STATEMENT_LIST'  
-STATEMENT_LIST' WHILE STATEMENT_LIST'  
-STATEMENT_LIST' eeee
-:
-STATEMENT 'float' 'id' ';'  
-STATEMENT 'id' '=' EXPRESSION ';'  
-STATEMENT 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'  
-STATEMENT 'int' 'id' ';'  
-STATEMENT WHILE
-:
 WHILE 'while' '(' EXPRESSION ')' '{' STATEMENT '}'
 :
-SIMPLE_EXPRESSION' eeee
-SIMPLE_EXPRESSION' ‘addop’ TERM SIMPLE_EXPRESSION' 
+FACTOR '(' EXPRESSION ')'
+FACTOR 'id'
+FACTOR 'num'
+:
+STATEMENT_LIST STATEMENT STATEMENT_LIST'
 :
 EXPRESSION0 'relop' SIMPLE_EXPRESSION
 EXPRESSION0 eeee
 :
-EXPRESSION SIMPLE_EXPRESSION EXPRESSION0
+IF 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
 :
-ASSIGNMENT 'id' '=' EXPRESSION ';'
-:
-SIGN '+' 
-SIGN '-'
-:
-SIMPLE_EXPRESSION '+' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION '-' TERM SIMPLE_EXPRESSION' 
-SIMPLE_EXPRESSION TERM SIMPLE_EXPRESSION' 
-:
-FACTOR '(' EXPRESSION ')'
-FACTOR 'id' 
-FACTOR 'num' 
+STATEMENT_LIST' STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' eeee
 :
 DECLARATION PRIMITIVE_TYPE 'id' ';'
 :
-TERM '(' EXPRESSION ')' TERM' 
-TERM 'id' TERM' 
-TERM 'num' TERM' 
-:
-STATEMENT_LIST 'float' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST 'id' '=' EXPRESSION ';' STATEMENT_LIST' 
-STATEMENT_LIST 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST' 
-STATEMENT_LIST 'int' 'id' ';' STATEMENT_LIST' 
-STATEMENT_LIST WHILE STATEMENT_LIST' 
-:
-IF 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
-:
-PRIMITIVE_TYPE 'float'
-PRIMITIVE_TYPE 'int' 
+ASSIGNMENT 'id' '=' EXPRESSION ';'
 :
 METHOD_BODY STATEMENT_LIST
+:
+EXPRESSION SIMPLE_EXPRESSION EXPRESSION0
+:
+PRIMITIVE_TYPE 'float'
+PRIMITIVE_TYPE 'int'
+:
+SIMPLE_EXPRESSION' eeee
+SIMPLE_EXPRESSION' ‘addop’ TERM SIMPLE_EXPRESSION'
+:
+SIGN '+'
+SIGN '-'
+:
+TERM FACTOR TERM'
+:
+SIMPLE_EXPRESSION SIGN TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION TERM SIMPLE_EXPRESSION'
+:
+STATEMENT ASSIGNMENT
+STATEMENT DECLARATION
+STATEMENT IF
+STATEMENT WHILE
+:
+TERM' 'mulop' FACTOR TERM'
+TERM' eeee
 ----------------------------
 -----------------------------
-‘addop’ TERM SIMPLE_EXPRESSION' :   
-‘addop’:   
+‘addop’ TERM SIMPLE_EXPRESSION':   
 eeee:   eeee  
-WHILE STATEMENT_LIST' :   'while'  
-TERM SIMPLE_EXPRESSION' :   '('  'id'  'num'  
+TERM':   'mulop'  eeee  
+TERM SIMPLE_EXPRESSION':   '('  'id'  'num'  
 TERM:   '('  'id'  'num'  
 STATEMENT_LIST':   'float'  'id'  'if'  'int'  'while'  eeee  
-STATEMENT_LIST:   'float'  'id'  'if'  'int'  'while'  
-SIGN:   '+'  '-'  
-PRIMITIVE_TYPE 'id' ';':   'float'  'int'  
-PRIMITIVE_TYPE:   'float'  'int'  
-EXPRESSION:   '('  '+'  '-'  'id'  'num'  
-'id' '=' EXPRESSION ';' STATEMENT_LIST'  :   'id'  
 STATEMENT:   'float'  'id'  'if'  'int'  'while'  
-'while' '(' EXPRESSION ')' '{' STATEMENT '}':   'while'  
-DECLARATION:   'float'  'int'  
 WHILE:   'while'  
-EXPRESSION0:   'relop'  eeee  
-'id' '=' EXPRESSION ';' STATEMENT_LIST' :   'id'  
-'float' 'id' ';'  :   'float'  
-'num':   'num'  
-'id' '=' EXPRESSION ';'  :   'id'  
-'id' '=' EXPRESSION ';':   'id'  
-'relop':   'relop'  
-'while':   'while'  
-'float' 'id' ';' STATEMENT_LIST' :   'float'  
-SIMPLE_EXPRESSION:   '('  '+'  '-'  'id'  'num'  
-'float':   'float'  
-'(' EXPRESSION ')':   '('  
-'int' 'id' ';' STATEMENT_LIST'  :   'int'  
-')':   ')'  
-'(':   '('  
-FACTOR:   '('  'id'  'num'  
-'(' EXPRESSION ')' TERM' :   '('  
-'float' 'id' ';' STATEMENT_LIST'  :   'float'  
-WHILE STATEMENT_LIST'  :   'while'  
-'if':   'if'  
-SIMPLE_EXPRESSION':   eeee  
-'+' :   '+'  
-:   
-'id' :   'id'  
-'}':   '}'  
-'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}':   'if'  
-'+':   '+'  
-'=':   '='  
-'-':   '-'  
-'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'  :   'if'  
-'+' TERM SIMPLE_EXPRESSION' :   '+'  
-'id':   'id'  
-'int' 'id' ';'  :   'int'  
-'mulop' FACTOR TERM' :   'mulop'  
-';':   ';'  
 SIMPLE_EXPRESSION EXPRESSION0:   '('  '+'  '-'  'id'  'num'  
-'num' TERM' :   'num'  
-METHOD_BODY:   'float'  'id'  'if'  'int'  'while'  
+FACTOR TERM':   '('  'id'  'num'  
+'id' '=' EXPRESSION ';':   'id'  
 IF:   'if'  
-'-' TERM SIMPLE_EXPRESSION' :   '-'  
-'id' TERM' :   'id'  
-TERM':   'mulop'  eeee  
-'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST' :   'if'  
-'int':   'int'  
-'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}' STATEMENT_LIST'  :   'if'  
-'int' :   'int'  
-'int' 'id' ';' STATEMENT_LIST' :   'int'  
+'float':   'float'  
+'=':   '='  
+'(' EXPRESSION ')':   '('  
+'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}':   'if'  
+‘addop’:   
+STATEMENT_LIST:   'float'  'id'  'if'  'int'  'while'  
+DECLARATION:   'float'  'int'  
+'id':   'id'  
+EXPRESSION0:   'relop'  eeee  
+EXPRESSION:   '('  '+'  '-'  'id'  'num'  
+PRIMITIVE_TYPE:   'float'  'int'  
+'(':   '('  
 'mulop':   'mulop'  
-'num' :   'num'  
+'int':   'int'  
+'}':   '}'  
+PRIMITIVE_TYPE 'id' ';':   'float'  'int'  
+SIMPLE_EXPRESSION:   '('  '+'  '-'  'id'  'num'  
+';':   ';'  
 'else':   'else'  
+'+':   '+'  
+'-':   '-'  
+'num':   'num'  
+'relop':   'relop'  
+')':   ')'  
 'relop' SIMPLE_EXPRESSION:   'relop'  
+'while':   'while'  
+'while' '(' EXPRESSION ')' '{' STATEMENT '}':   'while'  
 '{':   '{'  
 ASSIGNMENT:   'id'  
+'mulop' FACTOR TERM':   'mulop'  
+METHOD_BODY:   'float'  'id'  'if'  'int'  'while'  
+STATEMENT STATEMENT_LIST':   'float'  'id'  'if'  'int'  'while'  
+FACTOR:   '('  'id'  'num'  
+SIGN:   '+'  '-'  
+SIMPLE_EXPRESSION':   eeee  
+'if':   'if'  
+SIGN TERM SIMPLE_EXPRESSION':   '+'  '-'  
 -----------------------------
 ‘addop’:   '('  'id'  'num'  
-:   'id'  'if'  'int'  'while'  
-METHOD_BODY:   
-PRIMITIVE_TYPE:   'id'  
-IF:   
-STATEMENT_LIST:   
-TERM:   $  '('  ')'  '-'  ';'  'id'  'num'  'relop'  
-DECLARATION:   
-FACTOR:   $  'mulop'  
-STATEMENT:   '}'  
-TERM':   $  '('  ')'  '-'  ';'  'id'  'num'  'relop'  
-WHILE:   $  'float'  'id'  'if'  'int'  'while'  '}'  
-SIMPLE_EXPRESSION':   $  '('  ')'  '-'  ';'  'id'  'num'  'relop'  
-S:   $  
-EXPRESSION:   ')'  ';'  
+TERM':   '$'  
+STATEMENT_LIST':   
+IF:   '$'  'float'  'id'  'if'  'int'  'while'  '}'  
 EXPRESSION0:   ')'  ';'  
-STATEMENT_LIST':   'id'  'if'  'int'  'while'  
-ASSIGNMENT:   
-SIGN:   
-SIMPLE_EXPRESSION:   $  ')'  ';'  'relop'  
-multiple productions in one slot error !!
-multiple productions in one slot error !!
-multiple productions in one slot error !!
-multiple productions in one slot error !!
+STATEMENT_LIST:   '$'  
+FACTOR:   '$'  'mulop'  
+WHILE:   '$'  'float'  'id'  'if'  'int'  'while'  '}'  
+DECLARATION:   '$'  'float'  'id'  'if'  'int'  'while'  '}'  
+ASSIGNMENT:   '$'  'float'  'id'  'if'  'int'  'while'  '}'  
+METHOD_BODY:   '$'  
+EXPRESSION:   ')'  ';'  
+PRIMITIVE_TYPE:   'id'  
+SIMPLE_EXPRESSION':   '$'  ')'  ';'  'relop'  
+SIGN:   '('  'id'  'num'  
+TERM:   '$'  ')'  ';'  'relop'  
+SIMPLE_EXPRESSION:   '$'  ')'  ';'  'relop'  
+STATEMENT:   '$'  'float'  'id'  'if'  'int'  'while'  '}'  
+
+------table--------
+ASSIGNMENT ,'$' :error
+ASSIGNMENT ,'(' :error
+ASSIGNMENT ,')' :error
+ASSIGNMENT ,'+' :error
+ASSIGNMENT ,'-' :error
+ASSIGNMENT ,';' :error
+ASSIGNMENT ,'=' :error
+ASSIGNMENT ,'else' :error
+ASSIGNMENT ,'float' :error
+ASSIGNMENT ,'id' :'id' '=' EXPRESSION ';'
+ASSIGNMENT ,'if' :error
+ASSIGNMENT ,'int' :error
+ASSIGNMENT ,'mulop' :error
+ASSIGNMENT ,'num' :error
+ASSIGNMENT ,'relop' :error
+ASSIGNMENT ,'while' :error
+ASSIGNMENT ,'{' :error
+ASSIGNMENT ,'}' :error
+DECLARATION ,'$' :error
+DECLARATION ,'(' :error
+DECLARATION ,')' :error
+DECLARATION ,'+' :error
+DECLARATION ,'-' :error
+DECLARATION ,';' :error
+DECLARATION ,'=' :error
+DECLARATION ,'else' :error
+DECLARATION ,'float' :PRIMITIVE_TYPE 'id' ';'
+DECLARATION ,'id' :error
+DECLARATION ,'if' :error
+DECLARATION ,'int' :PRIMITIVE_TYPE 'id' ';'
+DECLARATION ,'mulop' :error
+DECLARATION ,'num' :error
+DECLARATION ,'relop' :error
+DECLARATION ,'while' :error
+DECLARATION ,'{' :error
+DECLARATION ,'}' :error
+EXPRESSION ,'$' :error
+EXPRESSION ,'(' :SIMPLE_EXPRESSION EXPRESSION0
+EXPRESSION ,')' :error
+EXPRESSION ,'+' :SIMPLE_EXPRESSION EXPRESSION0
+EXPRESSION ,'-' :SIMPLE_EXPRESSION EXPRESSION0
+EXPRESSION ,';' :error
+EXPRESSION ,'=' :error
+EXPRESSION ,'else' :error
+EXPRESSION ,'float' :error
+EXPRESSION ,'id' :SIMPLE_EXPRESSION EXPRESSION0
+EXPRESSION ,'if' :error
+EXPRESSION ,'int' :error
+EXPRESSION ,'mulop' :error
+EXPRESSION ,'num' :SIMPLE_EXPRESSION EXPRESSION0
+EXPRESSION ,'relop' :error
+EXPRESSION ,'while' :error
+EXPRESSION ,'{' :error
+EXPRESSION ,'}' :error
+EXPRESSION0 ,'$' :error
+EXPRESSION0 ,'(' :error
+EXPRESSION0 ,')' :eeee
+EXPRESSION0 ,'+' :error
+EXPRESSION0 ,'-' :error
+EXPRESSION0 ,';' :eeee
+EXPRESSION0 ,'=' :error
+EXPRESSION0 ,'else' :error
+EXPRESSION0 ,'float' :error
+EXPRESSION0 ,'id' :error
+EXPRESSION0 ,'if' :error
+EXPRESSION0 ,'int' :error
+EXPRESSION0 ,'mulop' :error
+EXPRESSION0 ,'num' :error
+EXPRESSION0 ,'relop' :'relop' SIMPLE_EXPRESSION
+EXPRESSION0 ,'while' :error
+EXPRESSION0 ,'{' :error
+EXPRESSION0 ,'}' :error
+FACTOR ,'$' :error
+FACTOR ,'(' :'(' EXPRESSION ')'
+FACTOR ,')' :error
+FACTOR ,'+' :error
+FACTOR ,'-' :error
+FACTOR ,';' :error
+FACTOR ,'=' :error
+FACTOR ,'else' :error
+FACTOR ,'float' :error
+FACTOR ,'id' :'id'
+FACTOR ,'if' :error
+FACTOR ,'int' :error
+FACTOR ,'mulop' :error
+FACTOR ,'num' :'num'
+FACTOR ,'relop' :error
+FACTOR ,'while' :error
+FACTOR ,'{' :error
+FACTOR ,'}' :error
+IF ,'$' :error
+IF ,'(' :error
+IF ,')' :error
+IF ,'+' :error
+IF ,'-' :error
+IF ,';' :error
+IF ,'=' :error
+IF ,'else' :error
+IF ,'float' :error
+IF ,'id' :error
+IF ,'if' :'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
+IF ,'int' :error
+IF ,'mulop' :error
+IF ,'num' :error
+IF ,'relop' :error
+IF ,'while' :error
+IF ,'{' :error
+IF ,'}' :error
+METHOD_BODY ,'$' :error
+METHOD_BODY ,'(' :error
+METHOD_BODY ,')' :error
+METHOD_BODY ,'+' :error
+METHOD_BODY ,'-' :error
+METHOD_BODY ,';' :error
+METHOD_BODY ,'=' :error
+METHOD_BODY ,'else' :error
+METHOD_BODY ,'float' :STATEMENT_LIST
+METHOD_BODY ,'id' :STATEMENT_LIST
+METHOD_BODY ,'if' :STATEMENT_LIST
+METHOD_BODY ,'int' :STATEMENT_LIST
+METHOD_BODY ,'mulop' :error
+METHOD_BODY ,'num' :error
+METHOD_BODY ,'relop' :error
+METHOD_BODY ,'while' :STATEMENT_LIST
+METHOD_BODY ,'{' :error
+METHOD_BODY ,'}' :error
+PRIMITIVE_TYPE ,'$' :error
+PRIMITIVE_TYPE ,'(' :error
+PRIMITIVE_TYPE ,')' :error
+PRIMITIVE_TYPE ,'+' :error
+PRIMITIVE_TYPE ,'-' :error
+PRIMITIVE_TYPE ,';' :error
+PRIMITIVE_TYPE ,'=' :error
+PRIMITIVE_TYPE ,'else' :error
+PRIMITIVE_TYPE ,'float' :'float'
+PRIMITIVE_TYPE ,'id' :error
+PRIMITIVE_TYPE ,'if' :error
+PRIMITIVE_TYPE ,'int' :'int'
+PRIMITIVE_TYPE ,'mulop' :error
+PRIMITIVE_TYPE ,'num' :error
+PRIMITIVE_TYPE ,'relop' :error
+PRIMITIVE_TYPE ,'while' :error
+PRIMITIVE_TYPE ,'{' :error
+PRIMITIVE_TYPE ,'}' :error
+SIGN ,'$' :error
+SIGN ,'(' :error
+SIGN ,')' :error
+SIGN ,'+' :'+'
+SIGN ,'-' :'-'
+SIGN ,';' :error
+SIGN ,'=' :error
+SIGN ,'else' :error
+SIGN ,'float' :error
+SIGN ,'id' :error
+SIGN ,'if' :error
+SIGN ,'int' :error
+SIGN ,'mulop' :error
+SIGN ,'num' :error
+SIGN ,'relop' :error
+SIGN ,'while' :error
+SIGN ,'{' :error
+SIGN ,'}' :error
+SIMPLE_EXPRESSION ,'$' :error
+SIMPLE_EXPRESSION ,'(' :TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION ,')' :error
+SIMPLE_EXPRESSION ,'+' :SIGN TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION ,'-' :SIGN TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION ,';' :error
+SIMPLE_EXPRESSION ,'=' :error
+SIMPLE_EXPRESSION ,'else' :error
+SIMPLE_EXPRESSION ,'float' :error
+SIMPLE_EXPRESSION ,'id' :TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION ,'if' :error
+SIMPLE_EXPRESSION ,'int' :error
+SIMPLE_EXPRESSION ,'mulop' :error
+SIMPLE_EXPRESSION ,'num' :TERM SIMPLE_EXPRESSION'
+SIMPLE_EXPRESSION ,'relop' :error
+SIMPLE_EXPRESSION ,'while' :error
+SIMPLE_EXPRESSION ,'{' :error
+SIMPLE_EXPRESSION ,'}' :error
+SIMPLE_EXPRESSION' ,'$' :eeee
+SIMPLE_EXPRESSION' ,'(' :error
+SIMPLE_EXPRESSION' ,')' :eeee
+SIMPLE_EXPRESSION' ,'+' :error
+SIMPLE_EXPRESSION' ,'-' :error
+SIMPLE_EXPRESSION' ,';' :eeee
+SIMPLE_EXPRESSION' ,'=' :error
+SIMPLE_EXPRESSION' ,'else' :error
+SIMPLE_EXPRESSION' ,'float' :error
+SIMPLE_EXPRESSION' ,'id' :error
+SIMPLE_EXPRESSION' ,'if' :error
+SIMPLE_EXPRESSION' ,'int' :error
+SIMPLE_EXPRESSION' ,'mulop' :error
+SIMPLE_EXPRESSION' ,'num' :error
+SIMPLE_EXPRESSION' ,'relop' :eeee
+SIMPLE_EXPRESSION' ,'while' :error
+SIMPLE_EXPRESSION' ,'{' :error
+SIMPLE_EXPRESSION' ,'}' :error
+STATEMENT ,'$' :error
+STATEMENT ,'(' :error
+STATEMENT ,')' :error
+STATEMENT ,'+' :error
+STATEMENT ,'-' :error
+STATEMENT ,';' :error
+STATEMENT ,'=' :error
+STATEMENT ,'else' :error
+STATEMENT ,'float' :DECLARATION
+STATEMENT ,'id' :ASSIGNMENT
+STATEMENT ,'if' :IF
+STATEMENT ,'int' :DECLARATION
+STATEMENT ,'mulop' :error
+STATEMENT ,'num' :error
+STATEMENT ,'relop' :error
+STATEMENT ,'while' :WHILE
+STATEMENT ,'{' :error
+STATEMENT ,'}' :error
+STATEMENT_LIST ,'$' :error
+STATEMENT_LIST ,'(' :error
+STATEMENT_LIST ,')' :error
+STATEMENT_LIST ,'+' :error
+STATEMENT_LIST ,'-' :error
+STATEMENT_LIST ,';' :error
+STATEMENT_LIST ,'=' :error
+STATEMENT_LIST ,'else' :error
+STATEMENT_LIST ,'float' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST ,'id' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST ,'if' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST ,'int' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST ,'mulop' :error
+STATEMENT_LIST ,'num' :error
+STATEMENT_LIST ,'relop' :error
+STATEMENT_LIST ,'while' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST ,'{' :error
+STATEMENT_LIST ,'}' :error
+STATEMENT_LIST' ,'$' :error
+STATEMENT_LIST' ,'(' :error
+STATEMENT_LIST' ,')' :error
+STATEMENT_LIST' ,'+' :error
+STATEMENT_LIST' ,'-' :error
+STATEMENT_LIST' ,';' :error
+STATEMENT_LIST' ,'=' :error
+STATEMENT_LIST' ,'else' :error
+STATEMENT_LIST' ,'float' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' ,'id' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' ,'if' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' ,'int' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' ,'mulop' :error
+STATEMENT_LIST' ,'num' :error
+STATEMENT_LIST' ,'relop' :error
+STATEMENT_LIST' ,'while' :STATEMENT STATEMENT_LIST'
+STATEMENT_LIST' ,'{' :error
+STATEMENT_LIST' ,'}' :error
+TERM ,'$' :error
+TERM ,'(' :FACTOR TERM'
+TERM ,')' :error
+TERM ,'+' :error
+TERM ,'-' :error
+TERM ,';' :error
+TERM ,'=' :error
+TERM ,'else' :error
+TERM ,'float' :error
+TERM ,'id' :FACTOR TERM'
+TERM ,'if' :error
+TERM ,'int' :error
+TERM ,'mulop' :error
+TERM ,'num' :FACTOR TERM'
+TERM ,'relop' :error
+TERM ,'while' :error
+TERM ,'{' :error
+TERM ,'}' :error
+TERM' ,'$' :eeee
+TERM' ,'(' :error
+TERM' ,')' :error
+TERM' ,'+' :error
+TERM' ,'-' :error
+TERM' ,';' :error
+TERM' ,'=' :error
+TERM' ,'else' :error
+TERM' ,'float' :error
+TERM' ,'id' :error
+TERM' ,'if' :error
+TERM' ,'int' :error
+TERM' ,'mulop' :'mulop' FACTOR TERM'
+TERM' ,'num' :error
+TERM' ,'relop' :error
+TERM' ,'while' :error
+TERM' ,'{' :error
+TERM' ,'}' :error
+WHILE ,'$' :error
+WHILE ,'(' :error
+WHILE ,')' :error
+WHILE ,'+' :error
+WHILE ,'-' :error
+WHILE ,';' :error
+WHILE ,'=' :error
+WHILE ,'else' :error
+WHILE ,'float' :error
+WHILE ,'id' :error
+WHILE ,'if' :error
+WHILE ,'int' :error
+WHILE ,'mulop' :error
+WHILE ,'num' :error
+WHILE ,'relop' :error
+WHILE ,'while' :'while' '(' EXPRESSION ')' '{' STATEMENT '}'
+WHILE ,'{' :error
+WHILE ,'}' :error
 METHOD_BODY to STATEMENT_LIST
-STATEMENT_LIST to 'int' 'id' ';' STATEMENT_LIST' 
-match 'int'
+STATEMENT_LIST to STATEMENT STATEMENT_LIST'
+STATEMENT to ASSIGNMENT
+ASSIGNMENT to 'id' '=' EXPRESSION ';'
 match 'id'
-Error: missing ',', inserted 
-error in table
-Www STATEMENT_LIST' ff ','
-Error: missing ',', inserted 
+match '='
+EXPRESSION to SIMPLE_EXPRESSION EXPRESSION0
+SIMPLE_EXPRESSION to TERM SIMPLE_EXPRESSION'
+TERM to FACTOR TERM'
+FACTOR to 'num'
+match 'num'
+Error:(illegal TERM') – discard ';'
+TERM' to eeee
+SIMPLE_EXPRESSION' to eeee
+Error:(illegal EXPRESSION0) – discard '$'
 not matched input
 this is main!

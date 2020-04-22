@@ -22,6 +22,7 @@ public:
     ~Parser();
     int trying  ; 
     map <string , vector <string> > nonTerminal ;
+    vector<string> nTerOrder;
     void leftRecursion () ; 
     void leftFactoring () ; 
     unordered_map <string , set<string>> print() ; 

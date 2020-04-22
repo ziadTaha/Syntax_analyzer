@@ -101,10 +101,15 @@ void Parser::readGrammer(string path)
       {
          cout << "eeeee In file" << endl ; 
       }
+      if ( Tname != "" ) 
+   {
+      nonTerminal[Tname] = allForT ;
+      nTerOrder.push_back(Tname);
+   }
    }
 
-   if ( Tname != "" ) 
-     nonTerminal[Tname] = allForT ;
+   
+     
 }
 
 vector<string> Parser::stringToVector(string s)
@@ -158,6 +163,7 @@ void Parser::immediateLeftRecursion(string a, vector<string> ex)
       bString.push_back(e);
       nonTerminal[a] = aString;
       nonTerminal[a_] = bString;
+      nTerOrder.push_back(a_);
    }
 }
 
@@ -202,14 +208,14 @@ void Parser::replaceAwithB(string a, string b)
 void Parser::leftRecursion()
 {
    std::vector<string> fin;
-   for (auto a : nonTerminal)
+   for (auto a : nTerOrder)
    {
       for (string s : fin)
       {
-         replaceAwithB(a.first, s);
+         replaceAwithB(a, s);
       }
-      immediateLeftRecursion(a.first, nonTerminal[a.first]);
-      fin.push_back(a.first);
+      immediateLeftRecursion(a, nonTerminal[a]);
+      fin.push_back(a);
    }
 }
 
