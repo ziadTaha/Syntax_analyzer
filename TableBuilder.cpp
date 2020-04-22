@@ -25,7 +25,8 @@ void TableBuilder::build() {
                 bool thisSlotIsTaken=false;
                 if(this->first[product].find(terminal) != this->first[product].end()){
                     t[{production.first,terminal}]=product;thisSlotIsTaken=true;
-                }if(this->follow[production.first].find(terminal) != this->follow[production.first].end()){                       //se if it can be [product]
+                }
+                if(this->follow[production.first].find(terminal) != this->follow[production.first].end()){                       //se if it can be [product]
                     if(this->first[production.first].find("eeee") != this->first[production.first].end()){
                         if(this->productions[production.first].find("eeee") != this->productions[production.first].end()&&
                            thisSlotIsTaken){
@@ -34,7 +35,7 @@ void TableBuilder::build() {
                         }
                         t[{production.first,terminal}]="eeee";
                     }
-                     else if (t.find({production.first,terminal}) == t.end()){
+                     else if (t[{production.first,terminal}] == "error"){
                         t[{production.first,terminal}]="synch";
                     }
                 }

@@ -659,23 +659,10 @@ SIMPLE_EXPRESSION' to eeee
 EXPRESSION0 to eeee
 match ';'
 match '}'
-match 'else'
-match '{'
-STATEMENT to ASSIGNMENT
-ASSIGNMENT to 'id' '=' EXPRESSION ';'
-match 'id'
-match '='
-EXPRESSION to SIMPLE_EXPRESSION EXPRESSION0
-SIMPLE_EXPRESSION to TERM SIMPLE_EXPRESSION'
-TERM to FACTOR TERM'
-FACTOR to 'num'
-match 'num'
-TERM' to eeee
-SIMPLE_EXPRESSION' to eeee
-EXPRESSION0 to eeee
-match ';'
-match '}'
-STATEMENT_LIST' to eeee
-match '$'
-done
+5
+'else' Error: missing '$', inserted 
+4
+'{' Error: missing '$', inserted 
+STATEMENTError:(illegal STATEMENT) discard '$'
+not matched input
 this is main!
