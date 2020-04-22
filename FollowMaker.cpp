@@ -30,7 +30,9 @@ void FollowMaker::make() {
                      iterr != tokens.rend(); iterr++) {
                     string xx = *iterr;
                     if (!isTerminal(*iterr) && *iterr != "eeee") {
+                        int ex = Follow[*iterr].size();
                         Follow[*iterr].insert(trailer.begin(), trailer.end());
+                        test |= Follow[*iterr].size() - ex > 0;
                         if (First[*iterr].find("eeee") != First[*iterr].end()) {
                             trailer.insert(First[*iterr].begin(),
                                            First[*iterr].end());
@@ -93,15 +95,14 @@ vector<string> FollowMaker::tokenize(string s) {
 }
 
 
-
 void FollowMaker::print() {
 
-    cout << "-----------------------------"  << endl ; 
-    for(auto umap : Follow) {
-        cout << umap.first << ":   " ;
-        for(auto s:umap.second){
-            cout << s << "  " ;
+    cout << "-----------------------------" << endl;
+    for (auto umap : Follow) {
+        cout << umap.first << ":   ";
+        for (auto s:umap.second) {
+            cout << s << "  ";
         }
-        cout << endl ; 
+        cout << endl;
     }
 }
