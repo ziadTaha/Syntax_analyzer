@@ -37,7 +37,7 @@ void FollowMaker::make() {
                             trailer.insert(First[*iterr].begin(),
                                            First[*iterr].end());
                             trailer.erase("eeee");
-                            trailer.insert("\'$\'");
+                           // trailer.insert("\'$\'");
                         } else {
                             trailer = First[*iterr];
                             trailer.erase("eeee");

@@ -34,7 +34,7 @@ void TableBuilder::build() {
                         }
                         t[{production.first,terminal}]="eeee";
                     }
-                    else if (t.find({production.first,terminal}) == t.end()){
+                     else if (t.find({production.first,terminal}) == t.end()){
                         t[{production.first,terminal}]="synch";
                     }
                 }
@@ -56,7 +56,7 @@ void TableBuilder::calcTerminals() {
             }
         }
     }
-    s.insert("\'$\'");
+   s.insert("\'$\'");
     this->terminals=s;
 }
 
@@ -139,7 +139,7 @@ void TableBuilder::lastInput(string firstNon) {
            
           // handel error of not found , i can handel it alone as prev but of good message i prefer not 
           if (s.top() == "error") {
-            cout << "Error:(illegal " << stackP << ") – discard " << inputWords[i]  << endl ; 
+            cout <<stackP<< "Error:(illegal " << stackP << ") discard " << inputWords[i]  << endl ; 
             s.pop();
             s.push(stackP) ; 
             i++ ; 
@@ -153,7 +153,8 @@ void TableBuilder::lastInput(string firstNon) {
       //  stackP.substr( 1 , stackP.size() -1  ) ; // tryig to remove ' ' 
 
         if (stackP != inputWords[i]) {
-             cout << "Error: missing "<< inputWords[i] << ", inserted \n" ;
+             cout<< s.size()<<endl;
+             cout <<stackP <<" Error: missing "<< inputWords[i] << ", inserted \n" ;
              continue ; 
         }
 
