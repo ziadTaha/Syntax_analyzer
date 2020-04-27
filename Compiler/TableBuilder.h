@@ -27,6 +27,7 @@ private:
 
     bool isTerminal(string s);
 
+    vector<string> errorMes ; 
 
 
 public:

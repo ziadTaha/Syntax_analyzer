@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="CompilerC"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/home/zeny/Desktop/CompilerC/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/home/zeny/Desktop/CompilerC/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CompilerC">
+				<Option output="/home/zeny/Desktop/CompilerC/cmake-build-release/CompilerC" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zeny/Desktop/CompilerC/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zeny/Desktop/CompilerC/Compiler"/>
+					<Add directory="/home/zeny/Desktop/CompilerC/Compiler/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 CompilerC"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="CompilerC/fast">
+				<Option output="/home/zeny/Desktop/CompilerC/cmake-build-release/CompilerC" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/zeny/Desktop/CompilerC/cmake-build-release"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/home/zeny/Desktop/CompilerC/Compiler"/>
+					<Add directory="/home/zeny/Desktop/CompilerC/Compiler/include"/>
+					<Add directory="/usr/include/c++/7"/>
+					<Add directory="/usr/include/x86_64-linux-gnu/c++/7"/>
+					<Add directory="/usr/include/c++/7/backward"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
+					<Add directory="/usr/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 CompilerC/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/zeny/Desktop/CompilerC/cmake-build-release"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/zeny/Desktop/CompilerC/cmake-build-release/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/FirstMaker.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/FirstMaker.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/FollowMaker.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/FollowMaker.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/Parser.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/Parser.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/TableBuilder.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/TableBuilder.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/Controller.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/DFA.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/DFAState.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/NFA.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/State.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/include/Token.h">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/main.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/Controller.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/DFA.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/DFAState.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/NFA.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/State.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/Token.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/Compiler/src/zenyTest.cpp">
+			<Option target="CompilerC"/>
+		</Unit>
+		<Unit filename="/home/zeny/Desktop/CompilerC/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

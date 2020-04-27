@@ -1,0 +1,229 @@
+'$' METHOD_BODY
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+METHOD_BODY to STATEMENT_LIST
+-------------------
+'$' STATEMENT_LIST
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+STATEMENT_LIST to STATEMENT STATEMENT_LIST'
+-------------------
+'$' STATEMENT_LIST' STATEMENT
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+STATEMENT to DECLARATION
+-------------------
+'$' STATEMENT_LIST' DECLARATION
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+DECLARATION to PRIMITIVE_TYPE 'id' ';'
+-------------------
+'$' STATEMENT_LIST' ';' 'id' PRIMITIVE_TYPE
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+PRIMITIVE_TYPE to 'int'
+-------------------
+'$' STATEMENT_LIST' ';' 'id' 'int'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 'int' 
+match 'int'
+-------------------
+'$' STATEMENT_LIST' ';' 'id'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 'id' 
+match 'id'
+-------------------
+'$' STATEMENT_LIST' ';'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' ';' 
+match ';'
+-------------------
+'$' STATEMENT_LIST'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' 
+STATEMENT_LIST' to STATEMENT STATEMENT_LIST'
+-------------------
+'$' STATEMENT_LIST' STATEMENT
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' 
+STATEMENT to IF
+-------------------
+'$' STATEMENT_LIST' IF
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' 
+IF to 'if' '(' EXPRESSION ')' '{' STATEMENT '}' 'else' '{' STATEMENT '}'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION '(' 'if'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 'if' 
+match 'if'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION '('
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' '(' 
+match '('
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' 
+EXPRESSION to SIMPLE_EXPRESSION EXPRESSION0
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' 
+SIMPLE_EXPRESSION to TERM SIMPLE_EXPRESSION'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION' TERM
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' 
+TERM to FACTOR TERM'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION' TERM' FACTOR
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' 
+FACTOR to 'id'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION' TERM' 'id'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 'id' 
+match 'id'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION' TERM'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 
+TERM' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0 SIMPLE_EXPRESSION'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 
+SIMPLE_EXPRESSION' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' EXPRESSION0
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 
+EXPRESSION0 to 'relop' SIMPLE_EXPRESSION
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION 'relop'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 'relop' 
+match 'relop'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 
+SIMPLE_EXPRESSION to TERM SIMPLE_EXPRESSION'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION' TERM
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 
+TERM to FACTOR TERM'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION' TERM' FACTOR
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 
+FACTOR to 'num'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION' TERM' 'num'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 'num' 
+match 'num'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION' TERM'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 
+TERM' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')' SIMPLE_EXPRESSION'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 
+SIMPLE_EXPRESSION' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{' ')'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' ')' 
+match ')'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT '{'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' '{' 
+match '{'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' STATEMENT
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' 
+STATEMENT to ASSIGNMENT
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ASSIGNMENT
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' 
+ASSIGNMENT to 'id' 'assign' EXPRESSION ';'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION 'assign' 'id'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 'id' 
+match 'id'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION 'assign'
+'$' '}' ';' 'num' 'addop' 'id' 'assign' 
+match 'assign'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION
+'$' '}' ';' 'num' 'addop' 'id' 
+EXPRESSION to SIMPLE_EXPRESSION EXPRESSION0
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION
+'$' '}' ';' 'num' 'addop' 'id' 
+SIMPLE_EXPRESSION to TERM SIMPLE_EXPRESSION'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM
+'$' '}' ';' 'num' 'addop' 'id' 
+TERM to FACTOR TERM'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM' FACTOR
+'$' '}' ';' 'num' 'addop' 'id' 
+FACTOR to 'id'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM' 'id'
+'$' '}' ';' 'num' 'addop' 'id' 
+match 'id'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM'
+'$' '}' ';' 'num' 'addop' 
+TERM' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION'
+'$' '}' ';' 'num' 'addop' 
+SIMPLE_EXPRESSION' to 'addop' TERM SIMPLE_EXPRESSION'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM 'addop'
+'$' '}' ';' 'num' 'addop' 
+match 'addop'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM
+'$' '}' ';' 'num' 
+TERM to FACTOR TERM'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM' FACTOR
+'$' '}' ';' 'num' 
+FACTOR to 'num'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM' 'num'
+'$' '}' ';' 'num' 
+match 'num'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION' TERM'
+'$' '}' ';' 
+TERM' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0 SIMPLE_EXPRESSION'
+'$' '}' ';' 
+SIMPLE_EXPRESSION' to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';' EXPRESSION0
+'$' '}' ';' 
+EXPRESSION0 to eeee
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}' ';'
+'$' '}' ';' 
+match ';'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else' '}'
+'$' '}' 
+match '}'
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{' 'else'
+'$' 
+'else' Error: missing '$', inserted 
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT '{'
+'$' 
+'{' Error: missing '$', inserted 
+-------------------
+'$' STATEMENT_LIST' '}' STATEMENT
+'$' 
+STATEMENT to synch
+-------------------
+'$' STATEMENT_LIST' '}' synch
+'$' 
+error synch
+-------------------
+'$' STATEMENT_LIST' '}'
+'$' 
+'}' Error: missing '$', inserted 
+-------------------
+'$' STATEMENT_LIST'
+'$' 
+STATEMENT_LIST' to eeee
+-------------------
+'$'
+'$' 
+match '$'
+-------------------
+done

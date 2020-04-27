@@ -1,0 +1,5 @@
+int sum ; 
+ if (pass >= 10)
+{
+pass = pass + 1 ;
+}

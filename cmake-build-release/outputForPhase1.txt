@@ -1,0 +1,17 @@
+int
+id
+;
+if
+(
+id
+relop
+num
+)
+{
+id
+assign
+id
+addop
+num
+;
+}
